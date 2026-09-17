@@ -33,19 +33,66 @@
 
 <script>
 pannellum.viewer('panorama', {
-    type: 'equirectangular',
+    "default": {
+        "firstScene": "scene1",
+        "autoLoad": true,
+        "autoRotate": -2,
+        "sceneFadeDuration": 1000
+    },
 
-    panorama: '360-01.jpg',
+    "scenes": {
+        "scene1": {
+            "title": "Điểm 360 - 01",
+            "type": "equirectangular",
+            "panorama": "360-01.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -10,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Đi tới điểm 02",
+                    "sceneId": "scene2"
+                }
+            ]
+        },
 
-    autoLoad: true,
-    autoRotate: -2,
+        "scene2": {
+            "title": "Điểm 360 - 02",
+            "type": "equirectangular",
+            "panorama": "360-02.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -10,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Đi tới điểm 03",
+                    "sceneId": "scene3"
+                },
+                {
+                    "pitch": -10,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Quay lại điểm 01",
+                    "sceneId": "scene1"
+                }
+            ]
+        },
 
-    showZoomCtrl: true,
-    showFullscreenCtrl: true,
-
-    compass: false,
-
-    hfov: 100
+        "scene3": {
+            "title": "Điểm 360 - 03",
+            "type": "equirectangular",
+            "panorama": "360-03.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -10,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Quay lại điểm 02",
+                    "sceneId": "scene2"
+                }
+            ]
+        }
+    }
 });
 </script>
 
